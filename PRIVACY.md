@@ -9,6 +9,7 @@ Universal Sign Out ("the Extension") is designed to provide a simple, one-click 
 ## Data Collection and Usage
 
 The Extension:
+
 - Does not collect any personal information
 - Does not track user behavior
 - Does not store any user data
@@ -18,6 +19,7 @@ The Extension:
 ## How It Works
 
 The Extension operates by:
+
 1. Only accessing the currently active tab when you click the extension icon
 2. Executing a simple script to trigger the sign out action
 3. No data is stored or transmitted during this process
@@ -25,6 +27,7 @@ The Extension operates by:
 ## Permissions
 
 The Extension requires minimal permissions:
+
 - `activeTab`: To interact with the current tab when you click the extension
 - `scripting`: To execute the sign out script on the current page
 

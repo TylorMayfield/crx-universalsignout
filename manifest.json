@@ -3,7 +3,7 @@
   "name": "Universal Sign Out",
   "version": "1.0",
   "description": "One-click sign out from any web application. Simple, secure, and efficient.",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["activeTab", "browsingData"],
   "action": {
     "default_popup": "index.html",
     "default_icon": {
