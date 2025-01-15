@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Chrome Extension Template",
+  "name": "Universal Sign Out",
   "version": "1.0",
-  "description": "A template Chrome extension built with Mantine UI",
-  "permissions": [],
+  "description": "One-click sign out from any web application. Simple, secure, and efficient.",
+  "permissions": ["activeTab", "scripting", "storage"],
   "action": {
     "default_popup": "index.html",
     "default_icon": {

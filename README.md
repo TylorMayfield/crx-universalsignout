@@ -1,17 +1,22 @@
-# Chrome Extension Template with Mantine UI
+# Universal Sign Out
 
-A minimal Chrome extension template built with React and Mantine UI. This template provides a clean starting point for building Chrome extensions with a modern UI framework.
+A Chrome extension that provides one-click sign out functionality for any web application you're currently using. Simple, secure, and efficient.
 
 ## Features
 
-- **React 18**: Built with the latest version of React
-- **Mantine UI**: Beautiful and customizable UI components
-- **Modern Build System**: Uses Vite for fast development and builds
-- **TypeScript Support**: Includes TypeScript configurations
-- **Notification System**: Demonstrates Mantine's notification system
-- **Tabler Icons**: Integrated with Mantine UI
+- **One-Click Sign Out**: Instantly log out of your current web application
+- **Universal Compatibility**: Works with most common web applications
+- **Privacy Focused**: No data collection or tracking
+- **Modern UI**: Built with React and Mantine UI
+- **Lightweight**: Minimal impact on browser performance
 
 ## Getting Started
+
+1. Install from the Chrome Web Store (link coming soon)
+2. Click the extension icon when you want to sign out
+3. That's it! The extension will handle the sign out process
+
+## For Developers
 
 1. Clone this repository
 2. Install dependencies:
@@ -34,39 +39,21 @@ A minimal Chrome extension template built with React and Mantine UI. This templa
 │   ├── App.jsx          # Main application component
 │   ├── main.jsx         # Application entry point
 │   └── App.css          # Global styles
-├── src/components/     # Component directory
-└── index.html           # HTML template
-├── manifest.json        # Extension manifest
-├── vite.config.js       # Vite configuration
-└── manifest.json        # Extension manifest
-└── icon.png             # Extension icon
-└── PRIVACY.md           # Privacy policy
-└── README.md            # Project README
-└── package.json         # Project configuration
-└── package-lock.json    # Project lock file
-
-
+├── src/components/      # Component directory
+└── index.html          # HTML template
+├── manifest.json       # Extension manifest
+├── vite.config.js      # Vite configuration
+└── icon.png           # Extension icon
+└── PRIVACY.md         # Privacy policy
+└── README.md          # Project README
+└── package.json       # Project configuration
+└── package-lock.json  # Project lock file
 ```
 
-## Links
+## Privacy
 
-- [GitHub Repository](https://github.com/TylorMayfield/crx-template)
-- [Chrome Web Store](https://chromewebstore.google.com/detail/chrome-extension-template/mechhnlbchididihbgadhfokjnbhfbed)
+This extension is designed with privacy in mind. It does not collect any personal data, track user behavior, or store any information. For more details, see our [Privacy Policy](PRIVACY.md).
 
-## Customization
+## Contributing
 
-The template uses Mantine UI's theme system. You can customize the theme in `App.jsx`:
-
-```javascript
-<MantineProvider
-  theme={{
-    colorScheme: preferredColorScheme,
-    // Add your theme customizations here
-  }}
->
-```
-
-## Links
-
-- [GitHub Repository](https://github.com/TylorMayfield/crx-template)
-- [Chrome Web Store](https://chromewebstore.google.com/detail/chrome-extension-template/mechhnlbchididihbgadhfokjnbhfbed)
+Contributions are welcome! Please feel free to submit a Pull Request.

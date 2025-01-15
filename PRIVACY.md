@@ -1,31 +1,34 @@
-# Privacy Policy for Chrome Extension Template
+# Privacy Policy for Universal Sign Out
 
-Last Updated: January 7, 2025
+Last Updated: January 14, 2025
 
 ## Overview
 
-This Chrome Extension Template ("the Extension") is designed to be a minimal demonstration of Mantine UI components in a Chrome extension. We take your privacy seriously and want to be transparent about our data practices.
+Universal Sign Out ("the Extension") is designed to provide a simple, one-click sign out functionality for web applications. We take your privacy seriously and are committed to protecting your data.
 
 ## Data Collection and Usage
 
 The Extension:
 - Does not collect any personal information
 - Does not track user behavior
-- Does not store any user data outside of your local browser storage
+- Does not store any user data
 - Does not transmit any data to external servers
+- Only interacts with the current active tab to perform the sign out action
 
-## Storage
+## How It Works
 
-The Extension only uses Chrome's local storage API (`chrome.storage.local`) for demonstration purposes, which:
-- Is only accessible by the Extension itself
-- Stores data locally on your device
-- Is automatically cleared when you uninstall the Extension
+The Extension operates by:
+1. Only accessing the currently active tab when you click the extension icon
+2. Executing a simple script to trigger the sign out action
+3. No data is stored or transmitted during this process
 
 ## Permissions
 
 The Extension requires minimal permissions:
-- `storage`: Used to demonstrate Chrome's storage API functionality
-- Access to extension popup: To display the user interface
+- `activeTab`: To interact with the current tab when you click the extension
+- `scripting`: To execute the sign out script on the current page
+
+These permissions are used solely for the sign out functionality and do not enable any form of tracking or data collection.
 
 ## Changes to This Privacy Policy
 
