@@ -1,6 +1,6 @@
 # Universal Sign Out
 
-A Chrome extension that provides one-click sign out functionality for any web application you're currently using. Simple, secure, and efficient.
+An extension that provides one-click sign out functionality for any web application you're currently using. Simple, secure, and efficient.
 
 ## Features
 
