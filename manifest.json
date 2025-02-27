@@ -4,6 +4,10 @@
   "version": "1.0",
   "description": "One-click sign out from any web application. Simple, secure, and efficient.",
   "permissions": ["activeTab", "browsingData"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "action": {
     "default_popup": "index.html",
     "default_icon": {

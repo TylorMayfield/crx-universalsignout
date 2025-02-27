@@ -9,11 +9,14 @@ import {
   NavLink,
 } from "@mantine/core";
 import { useColorScheme } from "@mantine/hooks";
+import { Notifications, notifications } from '@mantine/notifications';
 import {
   IconSun,
   IconMoon,
   IconBrandGithub,
   IconBrandPatreon,
+  IconCheck,
+  IconX,
 } from "@tabler/icons-react";
 import "./App.css";
 
@@ -26,27 +29,49 @@ function App() {
 
   const handleSignOut = async () => {
     try {
+      // Show loading notification
+      notifications.show({
+        id: 'sign-out-loading',
+        loading: true,
+        title: 'Signing out',
+        message: 'Clearing data and cookies...',
+        autoClose: false,
+        withCloseButton: false,
+      });
+
       const [tab] = await chrome.tabs.query({
         active: true,
         currentWindow: true,
       });
 
       if (!tab || !tab.url) {
+        notifications.update({
+          id: 'sign-out-loading',
+          color: 'red',
+          title: 'Error',
+          message: 'No active tab found',
+          icon: <IconX size="1rem" />,
+          autoClose: 3000,
+          withCloseButton: true,
+        });
         return;
       }
 
       const url = new URL(tab.url);
+      const domain = url.hostname;
 
+      // Special handling for Google services
       if (
         url.hostname.includes("google.com") ||
         url.hostname.includes("youtube.com")
       ) {
         window.location.href = "https://accounts.google.com/Logout";
+        return;
       }
 
       chrome.browsingData.remove(
         {
-          origins: [`${url.protocol}//${url.hostname}`],
+          origins: [`${url.protocol}//${domain}`],
         },
         {
           cookies: true,
@@ -57,11 +82,34 @@ function App() {
           webSQL: true,
         },
         () => {
+          // Update notification to success
+          notifications.update({
+            id: 'sign-out-loading',
+            color: 'green',
+            title: 'Success',
+            message: `Signed out from ${domain}`,
+            icon: <IconCheck size="1rem" />,
+            autoClose: 3000,
+            withCloseButton: true,
+          });
+          
+          // Reload the tab
           chrome.tabs.reload(tab.id);
         }
       );
     } catch (error) {
       console.error("Error signing out:", error);
+      
+      // Show error notification
+      notifications.update({
+        id: 'sign-out-loading',
+        color: 'red',
+        title: 'Error',
+        message: `Failed to sign out: ${error.message}`,
+        icon: <IconX size="1rem" />,
+        autoClose: 3000,
+        withCloseButton: true,
+      });
     }
   };
 
@@ -133,6 +181,7 @@ function App() {
       withGlobalStyles
       withNormalizeCSS
     >
+      <Notifications position="top-center" zIndex={1000} />
       <Box
         style={{
           padding: "40px 20px",
